@@ -1,0 +1,32 @@
+version: '3.1'
+
+services:
+  # portal:
+  #   build: .
+  #   environment:
+  #     - DATABASE_URL=postgres://volt:volt@db:5432/volt
+  #   env_file:
+  #     - .env
+  #   restart: always
+  #   ports:
+  #     - ${PORT:-5173}:5173
+  #   depends_on:
+  #     - db
+  #   links:
+  #     - db
+  db:
+    build: ./db
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_DB: postgres
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: volt
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+    volumes:
+      - ${DB_DATA_DIR:-/tmp/db_data_volt1}:/var/lib/postgresql/data

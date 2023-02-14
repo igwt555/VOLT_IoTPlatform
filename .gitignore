@@ -1,0 +1,46 @@
+.DS_Store
+node_modules
+packages/api/node_modules
+packages/api/coverage
+packages/api/.nyc_output
+packages/api/.env
+packages/ui/node_modules
+packages/ui/.env
+/resources
+/components
+
+# misc
+/.sass-cache
+/connect.lock
+/coverage
+/libpeerconnection.log
+npm-debug.log
+testem.log
+/typings
+
+# local env files
+.env.local
+.env.*.local
+.env
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw*
+
+packages/api/build/
+packages/api/src/dist/
+packages/api/public
+
+packages/ui/cypress/screenshots
+packages/ui/cypress/videos
+db/db.schema.sql

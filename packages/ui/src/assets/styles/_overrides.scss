@@ -1,0 +1,22 @@
+// Suggested location to add your overrides so that migration would be easy by just updating the SASS folder in the future
+.p-toast.p-toast-top-right {
+  z-index: 1000;
+  top: 7rem;
+}
+
+.d-none {
+  display: none;
+}
+
+table.p-datatable-table {
+  tbody tr:not(.p-datatable-row-expansion) {
+    cursor: default;
+  }
+}
+.w-100 {
+  width: 100%;
+}
+
+.sm {
+  font-size: 12px;
+}

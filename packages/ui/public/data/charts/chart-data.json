@@ -1,0 +1,347 @@
+{
+  "voltage": {
+    "props": {
+      "chartId": {
+        "type": "String",
+        "default": "line-chart"
+      },
+      "width": {
+        "type": "Number",
+        "default": 400
+      },
+      "height": {
+        "type": "Number",
+        "default": 400
+      },
+      "cssClasses": {
+        "default": "",
+        "type": "String"
+      },
+      "styles": {
+        "type": "Object as PropType<Partial<CSSStyleDeclaration>>",
+        "default": {}
+      },
+      "plugins": {
+        "type": "Array as PropType<Plugin<'line'>[]>",
+        "default": []
+      }
+    },
+    "chartData": {
+      "labels": [ "00", "10:50:00", "10:50:10", "10:50:20", "10:50:30", "10:50:40", "10:50:50" ],
+      "datasets": [
+        {
+          "label": "Smart Meter A",
+          "backgroundColor": "#f44336",
+          "data": [230, 221, 220, 232, 235, 240, 250],
+          "borderColor": "#f44336"
+        },
+        {
+          "label": "Smart Meter B",
+          "backgroundColor": "#4caf50",
+          "data": [235, 230, 232, 225, 222, 218, 212],
+          "borderColor": "#4caf50"
+        },
+        {
+          "label": "Smart Meter C",
+          "backgroundColor": "#2196f4",
+          "data": [195, 200, 198, 210, 212, 208, 200],
+          "borderColor": "#2196f4"
+        }
+      ]
+    },
+    "chartOptions": {
+      "responsive": true,
+      "lineTension": 0.7,
+      "borderWidth": 2,
+      "elements": {
+        "point": {
+          "radius": 0
+        }
+      },
+      "plugins": {
+        "autocolors": false,
+        "annotation": {
+          "drawTime": "beforeDatasetsDraw",
+          "annotations": {
+            "line1": {
+              "type": "line",
+              "yMin": 200,
+              "yMax": 200,
+              "borderColor": "rgb(255, 99, 132)",
+              "borderWidth": 2,
+              "borderShadowColor": "transparent",
+              "shadowBlur": 1
+            },
+            "line2": {
+              "type": "line",
+              "yMin": 240,
+              "yMax": 240,
+              "borderColor": "rgb(255, 99, 132)",
+              "borderWidth": 2
+            },
+            "line3": {
+              "type": "line",
+              "yMin": 205,
+              "yMax": 205,
+              "borderColor": "rgb(209, 204, 47)",
+              "borderWidth": 2
+            },
+            "line4": {
+              "type": "line",
+              "yMin": 235,
+              "yMax": 235,
+              "borderColor": "rgb(209, 204, 47)",
+              "borderWidth": 2
+            }
+          }
+        }
+      },    
+      "scales": {
+        "y": {
+          "title": {
+            "display": true,
+            "text": "Voltage, V"
+          }
+        }
+      },
+      "lineAt": 225
+    }
+  },
+  "energyConsumptionBarChart": {
+    "props": {
+      "chartId": {
+        "type": "String",
+        "default": "bar-chart"
+      },
+      "width": {
+        "type": "Number",
+        "default": 400
+      },
+      "height": {
+        "type": "Number",
+        "default": 400
+      },
+      "cssClasses": {
+        "default": "",
+        "type": "String"
+      },
+      "styles": {
+        "type": "Object as PropType<Partial<CSSStyleDeclaration>>",
+        "default": {}
+      },
+      "plugins": {
+        "type": "Array as PropType<Plugin<'bar'>[]>",
+        "default": []
+      }
+    },
+    "chartData": {
+      "labels": [ "12:00", "16:00", "20:00", "00:00", "04:00", "08:00" ],
+      "datasets": [
+        {
+          "label": "Smart Meter C",
+          "backgroundColor": "#2196f4",
+          "data": [0.08, 0.06, 0.04, 0.03, 0.05, 0.08]
+        },
+        {
+          "label": "Smart Meter B",
+          "backgroundColor": "#4caf50",
+          "data": [0.05, 0.02, 0.04, 0.07, 0.01, 0.09]
+        },
+        {
+          "label": "Smart Meter A",
+          "backgroundColor": "#f44336",
+          "data": [0.04, 0.05, 0.03, 0.05, 0.06, 0.05]
+        }
+      ]
+    },
+    "chartOptions": {
+      "responsive": true,
+      "scales": {
+        "y": {
+          "title": {
+            "display": true,
+            "text": "Energy Consumption, kWh"
+          },
+          "stacked": true
+        },
+        "x": {
+          "stacked": true,
+          "categoryPercentage": 0.5,
+          "barPercentage": 1
+        }
+      }
+    }
+  },
+
+  "energyMeters": {
+    "data": [
+      {
+        "id": 1,
+        "name": "Smart Meter C",
+        "label": "3rd Floor",
+        "voltage": "203.24",
+        "amperage": "6.0",
+        "power": "1219.44"
+      },
+      {
+        "id": 2,
+        "name": "Smart Meter B",
+        "label": "2nd Floor",
+        "voltage": "211.69",
+        "amperage": "6.71",
+        "power": "1420.44"
+      },
+      {
+        "id": 3,
+        "name": "Smart Meter A",
+        "label": "1st Floor",
+        "voltage": "248.68",
+        "amperage": "3.22",
+        "power": "800.75"
+      },
+      {
+        "id": 4,
+        "name": "Smart Meter D",
+        "label": "4th Floor",
+        "voltage": "235.15",
+        "amperage": "4.5",
+        "power": "1000.45"
+      }
+    ]
+  },
+
+  "energyConsumption": {
+    "props": {
+      "chartId": {
+        "type": "String",
+        "default": "doughnut-chart"
+      },
+      "width": {
+        "type": "Number",
+        "default": 400
+      },
+      "height": {
+        "type": "Number",
+        "default": 400
+      },
+      "cssClasses": {
+        "default": "",
+        "type": "String"
+      },
+      "styles": {
+        "type": "Object as PropType<Partial<CSSStyleDeclaration>>",
+        "default": {}
+      },
+      "plugins": {
+        "type": "Array as PropType<Plugin<'doughnut'>[]>",
+        "default": []
+      }
+    },
+    "chartData": {
+     "labels": ["Smart Meter A", "Smart Meter B", "Smart Meter C"],
+      "datasets": [
+        {
+          "backgroundColor": ["#f44336", "#4caf50", "#2196f4"],
+          "data": [20, 44, 36]
+        }
+      ]
+    },
+    "chartOptions": {
+      "responsive": true,
+      "maintainAspectRatio": false
+    }
+  },
+
+  "amperage": {
+    "props": {
+      "chartId": {
+        "type": "String",
+        "default": "planet-chart"
+      },
+      "width": {
+        "type": "Number",
+        "default": 400
+      },
+      "height": {
+        "type": "Number",
+        "default": 400
+      },
+      "cssClasses": {
+        "default": "",
+        "type": "String"
+      },
+      "styles": {
+        "type": "Object as PropType<Partial<CSSStyleDeclaration>>",
+        "default": {}
+      },
+      "plugins": {
+        "type": "Array as PropType<Plugin<'line'>[]>",
+        "default": []
+      }
+    },
+    "chartData": {
+      "labels": [ "10:49:55", "10:50:00", "10:50:05", "10:50:10", "10:50:15", "10:50:20", "10:50:25", "10:50:30", "10:50:35", "10:50:40", "10:50:45", "10:50:50" ],
+      "datasets": [
+        {
+          "label": "Smart Meter A",
+          "backgroundColor": "rgba(247, 187, 183, 0.30)",
+          "data": [15, 16, 16.5, 15.5, 15.7, 15.8, 16.5, 15, 16.4, 15.6, 16.4, 16.1],
+          "borderColor": "#f44336"
+        },
+        {
+          "label": "Smart Meter B",
+          "backgroundColor": "rgba(27, 161, 32, 0.30)",
+          "data": [10, 11, 10.5, 10.5, 10.7, 10.8, 11.5, 10, 11.4, 10.6, 11.4, 11.1],
+          "borderColor": "#4caf50"
+        },
+        {
+          "label": "Smart Meter C",
+          "backgroundColor": "rgba(33, 150, 244, 0.50)",
+          "data": [5, 6, 4.5, 5.5, 5.7, 5.8, 5.5, 5, 5.4, 5.6, 5.4, 5.1],
+          "borderColor": "#2196f4"
+        }
+      ]
+    },
+    "chartOptions": {
+      "responsive": true,
+      "lineTension": 0.7,
+      "borderWidth": 1,
+      "elements": {
+        "point": {
+          "radius": 0
+        }
+      },
+      "fill": true,
+      "scales": {
+        "y": {
+          "title": {
+            "display": true,
+            "text": "Amperage, A"
+          },
+          "beginAtZero": true
+        }
+      }
+    }
+  },
+
+  "alarms": {
+    "data": [
+      {
+        "id": 1,
+        "start_time": "Wed Dec 08 2021 15:44:37 GMT-0800 (Pacific Standard Time)",
+        "originator": "Smart Meter C",
+        "type": "Low Voltage Alarm",
+        "severity": "Major",
+        "status": "Active Unacknowledged"
+      },
+      {
+        "id": 2,
+        "start_time": "Wed Dec 08 2021 15:44:37 GMT-0800 (Pacific Standard Time)",
+        "originator": "Smart Meter B",
+        "type": "High Voltage Alarm",
+        "severity": "Critical",
+        "status": "Active Unacknowledged"
+      }
+    ]
+  }
+}
